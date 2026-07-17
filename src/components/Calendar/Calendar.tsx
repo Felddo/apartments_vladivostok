@@ -9,13 +9,13 @@ interface MyComponentProps {
 }
 
 export const Calendar = ({ical = ''}: MyComponentProps) => {
-
+    console.log("Загрузка", ical)
     const proxy = "https://corsproxy.io/?"; 
     const link = proxy + encodeURIComponent(ical)
 
     return (
         <motion.div 
-            className="scroll-mt-30 custom-calendar p-8 md:p-10 bg-white rounded-4xl shadow-xl"
+            className="scroll-mt-30 custom-calendar p-4 bg-white rounded-4xl shadow-xl"
             id='ical'
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
