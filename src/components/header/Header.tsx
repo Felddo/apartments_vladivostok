@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NavItem } from "./NavItem";
 import { BurgerMenu } from "./BurgerMenu";
-import { motion } from "framer-motion";
 import { NAV_LINKS } from "../../data/data";
 import type { TLinks } from "../../types/types";
 

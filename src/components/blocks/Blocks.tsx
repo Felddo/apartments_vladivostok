@@ -8,7 +8,7 @@ export const Blocks = () => {
     const index = Math.floor(Math.random() * BLOCKS_DATA.length);
     return {
       mainBlock: BLOCKS_DATA[index],
-      otherBlock: BLOCKS_DATA.filter((item, i) => i !== index),
+      otherBlock: BLOCKS_DATA.filter((_, i) => i !== index),
     };
   }, []);
 
@@ -21,7 +21,6 @@ export const Blocks = () => {
       id="apartments"
     >
 
-      {/* <AvailabilityCalendar/> */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:min-h-[500px]">
         <Block key={mainBlock.name} name={mainBlock.name} image={mainBlock.image} slug={mainBlock.slug} className="min-h-[300px] lg:min-h-[500px]" animation={1}/>
         <div className="flex flex-col gap-6">

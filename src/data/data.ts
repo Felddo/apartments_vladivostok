@@ -346,7 +346,7 @@ export const FOOTER_ROOMS: TFooterColumn[] = [
 ];
 
 export const TYPES: string[] = Object.entries(APART_INFO).map(
-  ([slug, data]) => (data.type)
+  ([, data]) => (data.type)
 );
 
 export const FOOTER_CONTACTS: TFooterContacts[] = [
