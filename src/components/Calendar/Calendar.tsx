@@ -9,9 +9,7 @@ interface MyComponentProps {
 }
 
 export const Calendar = ({ical = ''}: MyComponentProps) => {
-    console.log("Загрузка", ical)
-    const proxy = "https://corsproxy.io/?"; 
-    const link = proxy + encodeURIComponent(ical)
+    const link = `/proxy?url=${encodeURIComponent(ical)}`;
 
     return (
         <motion.div 
