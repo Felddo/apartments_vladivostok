@@ -26,7 +26,7 @@ export interface TApart {
   square: number;
   mainImage: string;
   images: string[];
-  type: "Студия" | "1-комнатная" | "3-комнатная";
+  type: "Студия" | "1-комн" | "3-комн";
   addres: string;
   lat: number;
   lng: number;

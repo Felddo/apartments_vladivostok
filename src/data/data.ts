@@ -46,10 +46,10 @@ export const NAV_LINKS: TLinks  = {
     {label: "Главная", href: "/"},
     {label: "Фотографии", href: "#photos"},
     {label: "Описание", href: "#description"},
+    {label: "Правила", href: "#rules"},
     {label: "Календарь", href: "#ical"},
     {label: "Расположение", href: "#location"},
-    {label: "Контакты", href: "#contacts"},
-    {label: "Правила", href: "#rules"}
+    {label: "Контакты", href: "#contacts"}
   ]
 }
 
@@ -185,7 +185,7 @@ export const APART_INFO: Record<string, TApart> = {
     square: 45,
     mainImage: zakatyImages[0],
     images: zakatyImages,
-    type: "1-комнатная",
+    type: "1-комн",
     addres: "Станюковича, д.12",
     lat: 43.109428,
     lng: 131.875585,
@@ -259,7 +259,7 @@ export const APART_INFO: Record<string, TApart> = {
     square: 64,
     mainImage: centrImages[0],
     images: centrImages,
-    type: "3-комнатная",
+    type: "3-комн",
     addres: "Амурская, д.7",
     lat: 43.133124,
     lng: 131.888530,
