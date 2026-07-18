@@ -17,7 +17,7 @@ export const Blocks = () => {
 
   return (
     <section 
-      className="px-[5%] py-10 scroll-mt-15"
+      className="scroll-mt-15"
       id="apartments"
     >
       <h2 className="sr-only">Список доступных квартир посуточно</h2>

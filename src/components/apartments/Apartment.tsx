@@ -4,6 +4,7 @@ import { getApartmentSchema } from "../../utils/seo";
 import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";
 import { NameApart } from "./NameApart";
+import { BookingSteps } from "../Booking/BookingSteps";
 import { IconsBlock } from "./IconsBlock";
 import { Carousel } from "./Carousel";
 import { Description } from "./Description";
@@ -38,22 +39,35 @@ export const Apartment = () => {
       <main key={slug}>
         <ScrollRestoration />
         <Header page="apartment"/>
-        <article className={`px-[5%] py-10`}>
+        <article className="px-[5%] py-10">
           <div className="flex flex-col gap-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <Carousel apart={apartment}/>
               <div className="grid grid-rows-1 lg:grid-rows-2 gap-6">
                 <NameApart apart={apartment}/>
                 <IconsBlock apart={apartment}/>
               </div>
-            </div>
-            <div className="bg-white rounded-4xl p-8 md:p-10 shadow-xl flex flex-col">
+            </section>
+
+            <section className="bg-white rounded-4xl p-8 md:p-10 shadow-xl flex flex-col">
               <Description apart={apartment}/>
               <Facilities apart={apartment}/>
-            </div>
-            <RulesBlock apart={apartment}/>
-            <Calendar ical={apartment?.ical}/>
-            <MapBlock apart={apartment}/>
+            </section>
+
+            <section>
+              <RulesBlock apart={apartment}/>
+            </section>
+
+            <section className="flex flex-col gap-6">
+              <Calendar ical={apartment?.ical}/>
+              <BookingSteps/>
+            </section>
+
+            <section>
+              <MapBlock apart={apartment}/>
+            </section>
+
           </div>
         </article>
         <Footer/>

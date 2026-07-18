@@ -4,7 +4,8 @@ import type {
   TName, 
   TFooterContacts, 
   TFooterColumn,
-  TLinks
+  TLinks,
+  TBooking
 } from "../types/types"
 import { 
   IoPersonOutline,
@@ -40,7 +41,7 @@ import { MdOutlineSmokeFree } from "react-icons/md";
 export const NAV_LINKS: TLinks  = {
   "main": [
     {label: "Наши квартиры", href: "#apartments"},
-    {label: "Контакты", href: "#contacts"}
+    {label: "Как забронировать", href: "#bookingsteps"},
   ],
   "apartment": [
     {label: "Главная", href: "/"},
@@ -48,8 +49,8 @@ export const NAV_LINKS: TLinks  = {
     {label: "Описание", href: "#description"},
     {label: "Правила", href: "#rules"},
     {label: "Календарь", href: "#ical"},
+    {label: "Как забронировать", href: "#bookingsteps"},
     {label: "Расположение", href: "#location"},
-    {label: "Контакты", href: "#contacts"}
   ]
 }
 
@@ -357,6 +358,26 @@ export const FOOTER_ROOMS: TFooterColumn[] = [
 export const TYPES: string[] = Object.entries(APART_INFO).map(
   ([, data]) => (data.type)
 );
+
+export const BOOKING: TBooking[] = [
+  {
+    title: "Свяжитесь с нами",
+    description: "Напишите в любой из мессенджеров. Укажите свободные даты заезда и количество гостей."
+  },
+  {
+    title: "Подтверждение",
+    description: "Мы проверяем даты, проверяем цену и обсуждаем детали."
+  },
+  {
+    title: "Подписание договора",
+    description: "Скидываем договор аренды, вы его заполняете и присылаете обратно"
+  },
+  {
+    title: "Заселение",
+    description: "За несколько дней до заезда вы получаете инструкции по бесконтактному заселению."
+  }
+
+];
 
 export const FOOTER_CONTACTS: TFooterContacts[] = [
   {

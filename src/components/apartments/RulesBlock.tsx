@@ -16,7 +16,7 @@ export const RulesBlock = ({ apart }: MyComponentProps) => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
     >
-
+      <h2 className="sr-only">Правила проживания</h2>
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {apart.rules.map((rule, idx) => {
             const isWide = idx % 3 === 0;

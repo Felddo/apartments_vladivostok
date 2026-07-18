@@ -33,7 +33,7 @@ export const Footer = () => {
             />
           ))}
           
-          <address className="flex flex-col lg:col-span-2 gap-4">
+          <address className="flex flex-col lg:col-span-2 gap-4 not-italic">
             <h3 className="text-footer text-black uppercase">Контакты</h3>
             <ul className="flex flex-col gap-3">
               {FOOTER_CONTACTS.map((section) => (

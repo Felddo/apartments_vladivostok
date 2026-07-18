@@ -19,7 +19,8 @@ export const Calendar = ({ical = ''}: MyComponentProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-        >
+        >   
+            <h2 className="sr-only">Календарь занятости и бронирования</h2>
             <FullCalendar
                 plugins={[dayGridPlugin, iCalendarPlugin]}
                 initialView="dayGridMonth"

@@ -60,6 +60,11 @@ export type TLink = {
   type: "telegram" | "whatsapp" | "max";
 };
 
+export type TBooking = {
+  title: string;
+  description: string;
+};
+
 export type TFooterContacts = {
   name: string;
   number: string;
