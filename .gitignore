@@ -5,6 +5,3 @@ dist
 *.log
 .DS_Store
 .wrangler
-.public
-.src/utils
-src/utils/seo.ts
