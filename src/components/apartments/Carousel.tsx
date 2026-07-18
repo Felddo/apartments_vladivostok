@@ -65,7 +65,8 @@ export const Carousel = ({apart}: MyComponentProps) => {
             <div key={i} className="flex-[0_0_100%] min-w-0">
               <img
                 src={src}
-                alt={`${apart?.name} во Владивостоке — фото интерьера ${i + 1}`}
+                alt={`${apart?.name} во Владивостоке — фото интерьера, номер ${i + 1}`}
+                loading={i === 0 ? "eager" : "lazy"}
                 className="w-full h-[400px] object-cover"
               />
             </div>

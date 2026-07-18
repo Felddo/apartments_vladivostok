@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { getApartmentSchema } from "../../utils/seo";
 
 import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";
@@ -19,8 +20,7 @@ import { APART_INFO } from "../../data/data";
 export const Apartment = () => {
   const { slug } = useParams();
   const apartment = slug ? APART_INFO[slug] : null;
-  console.log("Текущий slug из URL:", slug);
-  console.log("Найдена ли квартира в данных:", apartment?.seoTitle);
+  const currentUrl = window.location.href;
 
   return (
     <>
@@ -30,27 +30,7 @@ export const Apartment = () => {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Accommodation",
-              "name": apartment?.name,
-              "description": apartment?.shortDescription,
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Владивосток",
-                "streetAddress": apartment?.addres
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": apartment?.lat,
-                "longitude": apartment?.lng
-              },
-              "image": apartment?.mainImage,
-              "occupancy": {
-                "@type": "QuantitativeValue",
-                "maxValue": apartment?.icons?.[0]?.text
-              }
-            })
+            __html: JSON.stringify(getApartmentSchema(apartment, currentUrl))
           }}
         />
       )}

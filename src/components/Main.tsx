@@ -2,6 +2,7 @@ import { Header } from './header/Header';
 import { Blocks } from './blocks/Blocks';
 import { Footer } from './footer/Footer';
 import { ScrollRestoration } from 'react-router-dom';
+import { getMainSchema } from '../utils/seo';
 
 export const Main = () => {
     return (
@@ -9,6 +10,13 @@ export const Main = () => {
             <title>Апартаменты во Владивостоке посуточно — Аренда жилья у моря</title>
             <meta name="description" content="Забронируйте уютные апартаменты в центре Владивостока. Вид на море и Золотой мост, бесконтактное заселение, отчетные документы." />
             <meta name="keywords" content="аренда квартир владивосток, снять жилье посуточно, апартаменты владивосток, жилье у моря владивосток" />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(getMainSchema())
+                }}
+            />
+
             <ScrollRestoration />
             <Header page="main"/>
             <Blocks/>
