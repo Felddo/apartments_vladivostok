@@ -23,6 +23,8 @@ export interface Ticons {
 
 export interface TApart {
   name: string;
+  seoTitle: string;
+  shortDescription: string;
   square: number;
   mainImage: string;
   images: string[];

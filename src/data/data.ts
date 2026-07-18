@@ -81,22 +81,25 @@ const ICONS: Record<string, IconType> = {
 }
 
 const panoramniImages = Object.values(
-  import.meta.glob('../assets/panoramni-vid/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' })
+  import.meta.glob('../assets/studiya-vid-na-zolotoy-most-vladivostok/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' })
 ) as string[];
 
 const zakatyImages = Object.values(
-  import.meta.glob('../assets/yarkie-zakaty/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' })
+  import.meta.glob('../assets/kvartira-s-vidom-na-more-stanyukovicha/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' })
 ) as string[];
 
 
 const centrImages = Object.values(
-  import.meta.glob('../assets/more-i-centr/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' })
+  import.meta.glob('../assets/trekhkomnatnaya-kvartira-u-morya-vladivostok/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' })
 ) as string[];
 
 
 export const APART_INFO: Record<string, TApart> = {
-  "panoramni-vid": {
-    name: "Опера Хаус",
+  "studiya-vid-na-zolotoy-most-vladivostok": {
+    name: "Студия «Опера Хаус»",
+    seoTitle: "Студия с видом на Золотой мост во Владивостоке посуточно",
+    shortDescription: `Снять студию посуточно во Владивостоке с панорамным видом на Золотой мост и Театр Оперы и Балета.
+                      Электронный замок, новый ремонт, парковка.`,
     square: 45,
     mainImage: panoramniImages[0],
     images: panoramniImages,
@@ -180,8 +183,11 @@ export const APART_INFO: Record<string, TApart> = {
       { text: "Максимум 4 гостя", iconType: ICONS['people'] },
     ]
   },
-  "yarkie-zakaty": {
-    name: "Ocean breeze",
+  "kvartira-s-vidom-na-more-stanyukovicha": {
+    name: "Ocean Breeze",
+    seoTitle: "Апартаменты с видом на море и закаты во Владивостоке — Центр",
+    shortDescription: `Аренда квартиры с видом на море и яхт-клуб во Владивостоке. Центр города,
+                      панорамный балкон для закатов, современный дизайн. До 4 человек.`,
     square: 45,
     mainImage: zakatyImages[0],
     images: zakatyImages,
@@ -254,8 +260,11 @@ export const APART_INFO: Record<string, TApart> = {
       { text: "Максимум 4 гостя", iconType: ICONS['people'] },
     ]
   },
-  "more-i-centr": {
-    name: "Море и центр",
+  "trekhkomnatnaya-kvartira-u-morya-vladivostok": {
+    name: "Море и центр", 
+    seoTitle: "Трёхкомнатная квартира у моря во Владивостоке, 6 спальных мест",
+    shortDescription: `Светлая 3-комнатная квартира во Владивостоке рядом с пляжем Кунгасный.
+                      Две спальни, 6 мест, тихий центр. Бесконтактное заселение, отчетные документы.`,
     square: 64,
     mainImage: centrImages[0],
     images: centrImages,

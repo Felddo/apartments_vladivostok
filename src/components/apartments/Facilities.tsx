@@ -16,14 +16,14 @@ export const Facilities = ({ apart }: MyComponentProps) => {
         Основные удобства
       </h2>
 
-      <motion.div
+      <motion.ul
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-7"
       >
         {apart.facilities.map((facility, idx) => (
-          <motion.div 
+          <motion.li 
             key={idx} 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -39,9 +39,9 @@ export const Facilities = ({ apart }: MyComponentProps) => {
               </h3>
             </div>
             <FacilityList facility={facility}/>
-          </motion.div>
+          </motion.li>
         ))}
-      </motion.div>
+      </motion.ul>
     </div>
   );
 };

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Главная страница -->
+  <url>
+    <loc>https://vash-site.pages.dev/</loc>
+    <priority>1.0</priority>
+  </url>
+  <!-- Квартира 1 -->
+  <url>
+    <loc>https://vash-site.pages.dev/apartment-1</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Квартира 2 -->
+  <url>
+    <loc>https://vash-site.pages.dev/apartment-2</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Квартира 3 -->
+  <url>
+    <loc>https://vash-site.pages.dev/apartment-3</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

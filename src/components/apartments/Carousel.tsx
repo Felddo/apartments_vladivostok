@@ -2,14 +2,16 @@ import { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import type { TApart } from '../../types/types';
 
 
 interface MyComponentProps {
-  images: string[] | undefined | null;
+  apart: TApart | null;
 }
 
-export const Carousel = ({ images = [] }: MyComponentProps) => {
-  const safeImages = images || [];
+
+export const Carousel = ({apart}: MyComponentProps) => {
+  const safeImages = apart?.images || [];
 
   const [mainRef, mainApi] = useEmblaCarousel();
 
@@ -63,7 +65,7 @@ export const Carousel = ({ images = [] }: MyComponentProps) => {
             <div key={i} className="flex-[0_0_100%] min-w-0">
               <img
                 src={src}
-                alt={`Фото ${i + 1}`}
+                alt={`${apart?.name} во Владивостоке — фото интерьера ${i + 1}`}
                 className="w-full h-[400px] object-cover"
               />
             </div>

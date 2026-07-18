@@ -17,12 +17,12 @@ export const IconsBlock = ({ apart }: MyComponentProps) => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
     >
-        <div 
+        <ul 
             className={`grid gap-y-5`}
             style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
         >
             {apart.icons.map((item, i) => (
-                <div 
+                <li 
                     key={i} 
                     className="flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-1"
                 >
@@ -33,9 +33,9 @@ export const IconsBlock = ({ apart }: MyComponentProps) => {
                     <span className="text-xs sm:text-sm">
                     {item.text}
                     </span>
-                </div>
+                </li>
             ))}
-        </div>
+        </ul>
     </motion.div>
   );
 };

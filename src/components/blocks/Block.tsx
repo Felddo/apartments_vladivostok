@@ -11,7 +11,7 @@ interface IBlockProps extends TName {
 export const Block = ({ name, image, slug, className, animation }: IBlockProps) => {
 
   return (
-    <motion.div 
+    <motion.li 
       className={`relative overflow-hidden rounded-4xl p-8 flex flex-col justify-between shadow-xl ${className}
       hover:-translate-x-0.5 hover:-translate-y-0.5 cursor-pointer transition-transform duration-300`}
       initial={{ opacity: 0, x: (Number(animation) / 2 !== 0) ? -50 : 50 }}
@@ -21,7 +21,7 @@ export const Block = ({ name, image, slug, className, animation }: IBlockProps) 
     >
       <img 
         src={image} 
-        alt={`Квартира ${name}`}
+        alt={`Апартаменты ${name} во Владивостоке`}
         className="absolute inset-0 w-full h-full object-cover -z-10"
       />
 
@@ -34,6 +34,6 @@ export const Block = ({ name, image, slug, className, animation }: IBlockProps) 
       >
         Подробнее
       </HashLink>
-    </motion.div>
+    </motion.li>
   );
 };

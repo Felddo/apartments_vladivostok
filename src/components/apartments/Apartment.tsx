@@ -19,16 +19,49 @@ import { APART_INFO } from "../../data/data";
 export const Apartment = () => {
   const { slug } = useParams();
   const apartment = slug ? APART_INFO[slug] : null;
+  console.log("Текущий slug из URL:", slug);
+  console.log("Найдена ли квартира в данных:", apartment?.seoTitle);
 
   return (
     <>
-      <div key={slug}>
+      <title>{`${apartment?.seoTitle} — Аренда во Владивостоке`}</title>
+      <meta name="description" content={apartment?.shortDescription} />
+      {apartment && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Accommodation",
+              "name": apartment?.name,
+              "description": apartment?.shortDescription,
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Владивосток",
+                "streetAddress": apartment?.addres
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": apartment?.lat,
+                "longitude": apartment?.lng
+              },
+              "image": apartment?.mainImage,
+              "occupancy": {
+                "@type": "QuantitativeValue",
+                "maxValue": apartment?.icons?.[0]?.text
+              }
+            })
+          }}
+        />
+      )}
+
+      <main key={slug}>
         <ScrollRestoration />
         <Header page="apartment"/>
-        <div className={`px-[5%] py-10`}>
+        <article className={`px-[5%] py-10`}>
           <div className="flex flex-col gap-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Carousel images={apartment?.images}/>
+              <Carousel apart={apartment}/>
               <div className="grid grid-rows-1 lg:grid-rows-2 gap-6">
                 <NameApart apart={apartment}/>
                 <IconsBlock apart={apartment}/>
@@ -42,9 +75,9 @@ export const Apartment = () => {
             <Calendar ical={apartment?.ical}/>
             <MapBlock apart={apartment}/>
           </div>
-        </div>
+        </article>
         <Footer/>
-      </div>
+      </main>
     </>
   );
 };

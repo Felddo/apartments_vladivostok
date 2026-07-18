@@ -9,6 +9,8 @@ export const BurgerMenu = ({ isOpen, handleOpen }: Props) => {
       <button
         onClick={() => handleOpen(!isOpen)}
         className="flex flex-col gap-1 rounded-lg"
+        aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
+        aria-expanded={isOpen}
       >
         <span
           className={`block w-7 h-1 rounded-full bg-black transition-all duration-300 ${

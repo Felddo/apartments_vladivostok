@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { NavItem } from "./NavItem";
 import { BurgerMenu } from "./BurgerMenu";
 import { NAV_LINKS } from "../../data/data";
 import type { TLinks } from "../../types/types";
+
 
 interface MyComponentProps {
   page: keyof TLinks;
@@ -11,14 +14,20 @@ interface MyComponentProps {
 export const Header = ({ page }: MyComponentProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const LINKS = NAV_LINKS[page];
+  const LogoTag = page === 'main' ? 'h1' : 'span';
 
   return (
-    // Оберните хедер или добавьте маржины
     <header className={`sticky top-4 z-50 mx-[3%]`}>
       <div className={`px-[8%] h-20 bg-white/60 backdrop-blur-lg shadow-lg rounded-4xl`}>
         <div className="flex justify-between items-center h-full">
-          <span className="uppercase title-hero">Квартиры</span>
-          <nav className="hidden xl:block">
+
+          <Link to="/">
+            <LogoTag className="uppercase title-hero">
+              Квартиры
+            </LogoTag>
+          </Link>
+
+          <nav className="hidden xl:block" aria-label="Основное меню">
             <ul className="flex gap-8">
               {LINKS.map((item) => (
                 <NavItem key={item.label} label={item.label} href={item.href} />
@@ -28,7 +37,9 @@ export const Header = ({ page }: MyComponentProps) => {
           <BurgerMenu isOpen={isOpen} handleOpen={() => setIsOpen(!isOpen)} />
         </div>
       </div>
+
       <nav
+        aria-label="Мобильное меню"
         className={`
             absolute top-full left-0 right-0 mt-3
             rounded-4xl bg-white/50 backdrop-blur-lg

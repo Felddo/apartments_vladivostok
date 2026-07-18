@@ -11,7 +11,7 @@ export const Description = ({ apart }: MyComponentProps) => {
   if (!apart) return null;
 
   return (
-    <div 
+    <section 
       className="scroll-mt-40 flex flex-col"
       id="description"
     >
@@ -44,6 +44,6 @@ export const Description = ({ apart }: MyComponentProps) => {
       >
         {isExpanded ? "Свернуть описание" : "Читать далее..."}
       </button>
-    </div>
+    </section>
   );
 };

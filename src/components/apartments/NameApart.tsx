@@ -15,9 +15,9 @@ export const NameApart = ({ apart }: MyComponentProps) => {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="uppercase text-3xl md:text-4xl lg:text-4xl font-black tracking-tighter">
+      <h1 className="uppercase text-3xl md:text-4xl lg:text-4xl font-black tracking-tighter">
         {apart?.name}
-      </h2>
+      </h1>
 
       <div className="flex flex-col gap-1 border-r-4 border-primary pr-4">
         <span className="uppercase text-base md:text-lg lg:text-lg opacity-80 tracking-widest">

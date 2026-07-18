@@ -17,13 +17,13 @@ export const RulesBlock = ({ apart }: MyComponentProps) => {
         viewport={{ once: true }}
     >
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <ul className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {apart.rules.map((rule, idx) => {
             const isWide = idx % 3 === 0;
             const isAccent = idx % 4 === 0;
 
             return (
-              <motion.div
+              <motion.li
                 key={idx}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -58,10 +58,10 @@ export const RulesBlock = ({ apart }: MyComponentProps) => {
                         <rule.iconType className="w-8 h-8" />
                     </div>
                 )}
-              </motion.div>
+              </motion.li>
             );
           })}
-        </div>
+        </ul>
     </motion.div>
   );
 };

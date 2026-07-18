@@ -4,12 +4,14 @@ import { SiTelegram, SiWhatsapp } from "react-icons/si";
 
 export const FooterContacts = ({ name, number, links, className }: TFooterContacts) => {
   return (
-    <div
+    <li
       className={`flex justify-between bg-primary px-5 py-3 text-white text-footer rounded-full  hover:-translate-x-0.5 hover:-translate-y-0.5 cursor-pointer transition-transform duration-300 ${className}`}
     >
       <div className="flex flex-col">
         <span className="font-bold">{name}</span>
-        <span>{number}</span>
+        <a href={`tel:${number.replace(/\D/g, '')}`} className="hover:underline">
+          {number}
+        </a>
       </div>
 
       <div className="flex items-center gap-3">
@@ -20,6 +22,7 @@ export const FooterContacts = ({ name, number, links, className }: TFooterContac
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110"
+            aria-label={`Связаться с ${name} через ${link.type}`}
           >
             {link.type === "telegram" && (
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#27A7E7]">
@@ -43,6 +46,6 @@ export const FooterContacts = ({ name, number, links, className }: TFooterContac
           </a>
         ))}
       </div>
-    </div>
+    </li>
   );
 };

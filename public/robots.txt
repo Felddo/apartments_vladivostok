@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vash-site.pages.dev/sitemap.xml
