@@ -27,7 +27,7 @@ export const Header = ({ page }: MyComponentProps) => {
             </LogoTag>
           </HashLink>
 
-          <div className="flex gap-12">
+          <div className="flex gap-6">
             <nav className="hidden xl:block" aria-label="Основное меню">
               <ul className="flex gap-8">
                 {LINKS.map((item) => (
