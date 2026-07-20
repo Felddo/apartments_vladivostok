@@ -22,11 +22,13 @@ export const Apartment = () => {
   const { slug } = useParams();
   const apartment = slug ? APART_INFO[slug] : null;
   const currentUrl = window.location.href;
+  const canonicalUrl = `https://apartsvl.ru/kvartiry-posutochno-vladivostok/${slug}`;
 
   return (
     <>
       <title>{`${apartment?.seoTitle} — Аренда во Владивостоке`}</title>
-      <meta name="description" content={apartment?.shortDescription} />
+      <meta name="description" content={apartment?.shortDescription}/>
+      <link rel="canonical" href={canonicalUrl}/>
       {apartment && (
         <script
           type="application/ld+json"
