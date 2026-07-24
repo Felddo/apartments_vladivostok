@@ -41,7 +41,7 @@ import { MdOutlineSmokeFree } from "react-icons/md";
 export const NAV_LINKS: TLinks  = {
   "main": [
     {label: "Наши квартиры", href: "#apartments"},
-    {label: "Как забронировать", href: "#bookingsteps"},
+    {label: "Забронировать", href: "#bookingsteps"},
   ],
   "apartment": [
     {label: "Главная", href: "/"},
@@ -49,7 +49,7 @@ export const NAV_LINKS: TLinks  = {
     {label: "Описание", href: "#description"},
     {label: "Правила", href: "#rules"},
     {label: "Календарь", href: "#ical"},
-    {label: "Как забронировать", href: "#bookingsteps"},
+    {label: "Забронировать", href: "#bookingsteps"},
     {label: "Расположение", href: "#location"},
   ]
 }
