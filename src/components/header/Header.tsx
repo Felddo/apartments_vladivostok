@@ -18,7 +18,7 @@ export const Header = ({ page }: MyComponentProps) => {
 
   return (
     <header className={`sticky top-4 z-50 mx-[3%]`}>
-      <div className={`px-[8%] h-20 bg-white/60 backdrop-blur-lg shadow-lg rounded-4xl`}>
+      <div className={`px-[8%] md:px-[5%] h-20 bg-white/60 backdrop-blur-lg shadow-lg rounded-4xl`}>
         <div className="flex justify-between items-center h-full">
 
           <HashLink to="/">
